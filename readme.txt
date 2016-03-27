@@ -1,4 +1,4 @@
-The repository contains files for performing the matlab function imfill
+The repository contains files for performing the matlab functions imfill , multithresh and imquantize
 in C++ implementation.
 
 compilation :-
