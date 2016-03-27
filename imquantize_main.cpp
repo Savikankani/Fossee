@@ -1,3 +1,10 @@
+//IMQUANTIZE IMPLEMENTATION
+//INPUT - img (abc.JPG)
+//OUTPUT-- ans
+//NAME - SAVI KANKANI
+//EMAIL -ID : savikankani@gmail.com
+
+
 #include<vector>
 #include<iostream>
 #include<opencv2/core/core.hpp>
