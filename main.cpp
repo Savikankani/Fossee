@@ -1,15 +1,13 @@
-
-
-//IMFILL FUNCTION IMPLEMENTATION
-//INPUT -- img
-//OUTPUT -- outputimfill
+//MULTITHRESH FUNCTION
 //NAME :- SAVI KANKANI
-// EMAIL ID- savikankani@gmail.com
-// Number-9920151071
+//EMAIL-ID : savikankani@gmail.com
+//INPUT - img (abc.JPG)
+//OUTPUT - output
+
+
 
 #include <opencv\cv.h>
 #include <opencv\highgui.h>
-#include <opencv2\cv.h>
 
 
 using namespace std;
@@ -20,27 +18,16 @@ int main(void)
 
 {
 
-Mat img = imread ("C/Desktop/abc.JPG", IMREAD_GRAYSCALE);    //image is read
+Mat img= imread ("C/Desktop/abc.JPG"); //image read
+Mat output;
+ThreshOpts thresh;
+thresh.output();
+output= thresh.threshold(img); //set threshold
 
-Mat thresho; //threshold set
+    imshow("Thresholded", output); //display image after performing function
 
-threshold(img , thresho , 190, 255 , THRESH_BINARY_INV); //below 190= 0 and 190 to 255= 1.
-                                                          // binary image is inverted
-
-Mat imfloodfill = thresho.clone();        //create a copy and floodFill
-floodFill ( imfloodfill , cv::Point (0,0) , Scalar (255) );  //start from contour (0,0)
-
-Mat iminvfloodfill;  //invert the floodFill image
-bitwise_not(imfloodfill,iminvfloodfill );
-
-Mat outputimfill; //output image
-bitwise_or(thresho, iminvfloodfill, outputimfill); //bit wise or the threshold and floodFilled image
-
-
-imshow("output1" , outputimfill); //display the output image
-waitKey(0);
-
-return(0);
+waitKey();
+cvDestroyAllWindows();
+return 0;
 
 }
-
