@@ -20,7 +20,7 @@ int main(void)
 
 {
 
-Mat img = imread ("C/Desktop/abc.JPG", IMREAD_GRAYSCALE);    //image is read
+Mat img = imread ("C/Desktop/abc.JPG");    //image is read
 
 Mat thresho; //threshold set
 
